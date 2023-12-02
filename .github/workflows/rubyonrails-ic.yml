@@ -43,3 +43,19 @@ jobs:
         run: |
           gem install bundler
           bundle install
+
+      - name: Setup Test Database
+          env:
+            SECRET_KEY_BASE: ${{ secrets.RAILS_MASTER_KEY }}
+            RAILS_ENV: production
+            DATABASE_URL: "postgres://rails:admin@localhost:5432/gestao-monitoramento-frota-db"
+            PGHOST: localhost
+            PGUSER: rails
+          run: |
+            echo "SECRET_KEY_BASE=$SECRET_KEY_BASE" >> .env.production
+            rails db:create
+            rails db:migrate
+
+          - name: Run All Tests
+            run: |
+              rails test
