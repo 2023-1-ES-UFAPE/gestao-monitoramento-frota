@@ -47,12 +47,12 @@ jobs:
       - name: Setup Test Database
         env:
           SECRET_KEY_BASE: ${{ secrets.RAILS_MASTER_KEY }}
-          RAILS_ENV: production
+          RAILS_ENV: actions
           DATABASE_URL: "postgres://rails:admin@localhost:5432/gestao-monitoramento-frota-db"
           PGHOST: localhost
           PGUSER: rails
         run: |
-          echo "SECRET_KEY_BASE=$SECRET_KEY_BASE" >> .env.production
+          echo "SECRET_KEY_BASE=$SECRET_KEY_BASE" >> .env.actions
           rails db:create
           rails db:migrate
 
