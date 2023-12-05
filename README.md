@@ -1,25 +1,33 @@
 # README gestao-monitoramento-frota
-Sistema de Gestão e Monitoramento de Frota de Caminhões de Carga
+# Sistema de Gestão e Monitoramento de Frota de Caminhões de Carga
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## :octocat: Integrantes
 
-Things you may want to cover:
+- [Lucas Victor](https://github.com/lucasvictoor)
+- [Sara Abreu](https://github.com/ynjisng)
+- [Ricardo Martins](https://github.com/RickyM7)
+- [Vandielson Tenório](https://github.com/Vandielson)
+- [Lucas Emanoel](https://github.com/LucasEmanoel)
+- [Juan Gustavo](https://github.com/JuanGustah)
 
-* Ruby version
+## :page_with_curl: Sobre o projeto
 
-* System dependencies
+Este projeto é desenvolvido para a disciplina de __Engenharia de Software__, ministrado pelo Professor Dr. [Rodrigo Andrade](https://github.com/rcaa), com o intuito de criar um sistema para o gerenciamento e monitoramento de uma frota de caminhões de carga.
 
-* Configuration
+## :round_pushpin: Objetivos
 
-* Database creation
+O sistema deve permitir ao administrador autenticar-se de forma segura, cadastrar, editar, visualizar e remover informações dos caminhões, motoristas e rotas. Além disso, deve fornecer uma visão clara do status da frota e facilitar o planejamento e monitoramento de viagens e manutenções.
 
-* Database initialization
+## :hammer_and_wrench: Tecnologias usadas
 
-* How to run the test suite
+#### Ruby
+* Versão 3.1.1
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Rails
+* Versão 7.0.2.2
 
-* Deployment instructions
+### [Codacy](https://app.codacy.com/project/badge/Grade/5cb16aa916a6421bb00111d5d2aad5aa)](https://app.codacy.com/gh/2023-1-ES-UFAPE/gestao-monitoramento-frota/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+### [Render](https://gestao-monitoramento-frota.onrender.com)
 
-* ...
+## :construction: Status do Projeto
+Em andamento
