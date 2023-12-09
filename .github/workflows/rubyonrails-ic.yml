@@ -39,13 +39,6 @@ jobs:
         run: |
           sudo apt-get -yqq install libpq-dev
 
-      - name: Cache Ruby Gems
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
 
       - name: Bundle Install
         run: |
@@ -67,4 +60,4 @@ jobs:
 
       - name: Run All Tests
         run: |
-          rails test
+          bundle exec rails test
