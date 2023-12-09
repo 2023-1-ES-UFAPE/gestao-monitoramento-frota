@@ -54,7 +54,7 @@ jobs:
 
       - name: Setup Test Database
         env:
-          SECRET_KEY_BASE: ${{ secrets.RAILS_MASTER_KEY }}
+          SECRET_KEY_BASE: $RAILS_MASTER_KEY
           RAILS_ENV: actions
           DATABASE_URL: "postgres://rails:admin@localhost:5432/gestao-monitoramento-frota-db"
           PGHOST: localhost
