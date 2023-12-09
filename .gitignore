@@ -34,6 +34,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/credentials.yml.enc
 
 # dotenv, dotenv-rails
 # TODO Comment out these rules if environment variables can be committed

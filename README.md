@@ -26,7 +26,7 @@ O sistema deve permitir ao administrador autenticar-se de forma segura, cadastra
 #### Rails
 * Versão 7.0.2.2
 
-### [Codacy](https://app.codacy.com/project/badge/Grade/5cb16aa916a6421bb00111d5d2aad5aa)](https://app.codacy.com/gh/2023-1-ES-UFAPE/gestao-monitoramento-frota/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+### [Codacy ![Codacy Badge](https://app.codacy.com/project/badge/Grade/5cb16aa916a6421bb00111d5d2aad5aa)](https://app.codacy.com/gh/2023-1-ES-UFAPE/gestao-monitoramento-frota/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 ### [Render](https://gestao-monitoramento-frota.onrender.com)
 
 ## :construction: Status do Projeto
