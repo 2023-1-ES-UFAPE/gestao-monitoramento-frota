@@ -40,12 +40,12 @@ jobs:
           sudo apt-get -yqq install libpq-dev
 
       - name: Cache Ruby Gems
-          uses: actions/cache@v2
-          with:
-            path: vendor/bundle
-            key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-            restore-keys: |
-              ${{ runner.os }}-gems-
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
 
       - name: Bundle Install
         run: |
