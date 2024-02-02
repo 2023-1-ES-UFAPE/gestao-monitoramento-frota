@@ -66,4 +66,5 @@ jobs:
 
       - name: Run All Tests
         run: |
+          rails db:migrate RAILS_ENV=test
           rails test
