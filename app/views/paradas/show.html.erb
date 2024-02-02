@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @parada %>
+
+<div>
+  <%= link_to "Edit this parada", edit_parada_path(@parada) %> |
+  <%= link_to "Back to paradas", paradas_path %>
+
+  <%= button_to "Destroy this parada", @parada, method: :delete %>
+</div>

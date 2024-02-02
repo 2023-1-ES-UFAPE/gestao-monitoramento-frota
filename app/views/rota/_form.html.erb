@@ -1,0 +1,47 @@
+<%= form_with(model: rotum) do |form| %>
+  <% if rotum.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(rotum.errors.count, "error") %> prohibited this rotum from being saved:</h2>
+
+      <ul>
+        <% rotum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :ponto_de_partida, style: "display: block" %>
+    <%= form.text_field :ponto_de_partida %>
+  </div>
+
+  <div>
+    <%= form.label :ponto_de_chegada, style: "display: block" %>
+    <%= form.text_field :ponto_de_chegada %>
+  </div>
+
+  <div>
+    <%= form.label :data_de_partida, style: "display: block" %>
+    <%= form.datetime_field :data_de_partida %>
+  </div>
+
+  <div>
+    <%= form.label :data_de_chegada, style: "display: block" %>
+    <%= form.datetime_field :data_de_chegada %>
+  </div>
+
+  <div>
+    <%= form.label :observacoes, style: "display: block" %>
+    <%= form.text_field :observacoes %>
+  </div>
+
+  <div>
+    <%= form.label :caminhao_id, style: "display: block" %>
+    <%= form.text_field :caminhao_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

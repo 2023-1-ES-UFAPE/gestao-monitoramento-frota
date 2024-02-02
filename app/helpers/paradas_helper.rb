@@ -1,0 +1,2 @@
+module ParadasHelper
+end
