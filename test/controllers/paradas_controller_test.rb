@@ -17,7 +17,7 @@ class ParadasControllerTest < ActionDispatch::IntegrationTest
 
   test "should create parada" do
     assert_difference("Parada.count") do
-      post paradas_url, params: { parada: { caminhao_id: @parada.caminhao_id, data_parada: @parada.data_parada, endereco_id: @parada.endereco_id, rota_id: @parada.rota_id } }
+      post paradas_url, params: { parada: { caminhao_id: @parada.caminhao_id, data_parada: @parada.data_parada, endereco_id: @parada.endereco_id } }
     end
 
     assert_redirected_to parada_url(Parada.last)
@@ -34,7 +34,7 @@ class ParadasControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update parada" do
-    patch parada_url(@parada), params: { parada: { caminhao_id: @parada.caminhao_id, data_parada: @parada.data_parada, endereco_id: @parada.endereco_id, rota_id: @parada.rota_id } }
+    patch parada_url(@parada), params: { parada: { caminhao_id: @parada.caminhao_id, data_parada: @parada.data_parada, endereco_id: @parada.endereco_id } }
     assert_redirected_to parada_url(@parada)
   end
 

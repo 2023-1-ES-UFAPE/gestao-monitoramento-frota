@@ -65,6 +65,6 @@ class ParadasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def parada_params
-      params.require(:parada).permit(:data_parada, :rota_id, :endereco_id, :caminhao_id)
+      params.require(:parada).permit(:data_parada, :endereco_id, :caminhao_id)
     end
 end

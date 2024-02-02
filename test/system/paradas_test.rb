@@ -17,7 +17,6 @@ class ParadasTest < ApplicationSystemTestCase
     fill_in "Caminhao", with: @parada.caminhao_id
     fill_in "Data parada", with: @parada.data_parada
     fill_in "Endereco", with: @parada.endereco_id
-    fill_in "Rota", with: @parada.rota_id
     click_on "Create Parada"
 
     assert_text "Parada was successfully created"
@@ -31,7 +30,6 @@ class ParadasTest < ApplicationSystemTestCase
     fill_in "Caminhao", with: @parada.caminhao_id
     fill_in "Data parada", with: @parada.data_parada
     fill_in "Endereco", with: @parada.endereco_id
-    fill_in "Rota", with: @parada.rota_id
     click_on "Update Parada"
 
     assert_text "Parada was successfully updated"
