@@ -1,0 +1,32 @@
+<%= form_with(model: parada) do |form| %>
+  <% if parada.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(parada.errors.count, "error") %> prohibited this parada from being saved:</h2>
+
+      <ul>
+        <% parada.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :data_parada, style: "display: block" %>
+    <%= form.datetime_field :data_parada %>
+  </div>
+
+  <div>
+    <%= form.label :endereco_id, style: "display: block" %>
+    <%= form.text_field :endereco_id %>
+  </div>
+
+  <div>
+    <%= form.label :caminhao_id, style: "display: block" %>
+    <%= form.text_field :caminhao_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

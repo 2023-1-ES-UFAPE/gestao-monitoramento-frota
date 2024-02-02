@@ -1,0 +1,27 @@
+<%= form_with(model: endereco) do |form| %>
+  <% if endereco.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(endereco.errors.count, "error") %> prohibited this endereco from being saved:</h2>
+
+      <ul>
+        <% endereco.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :cidade, style: "display: block" %>
+    <%= form.text_field :cidade %>
+  </div>
+
+  <div>
+    <%= form.label :cep, style: "display: block" %>
+    <%= form.number_field :cep %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module CaminhaosHelper
+end

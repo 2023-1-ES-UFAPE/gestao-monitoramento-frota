@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Rota</h1>
+
+<div id="rota">
+  <% @rota.each do |rotum| %>
+    <%= render rotum %>
+    <p>
+      <%= link_to "Show this rotum", rotum %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New rotum", new_rotum_path %>

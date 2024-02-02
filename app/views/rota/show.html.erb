@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @rotum %>
+
+<div>
+  <%= link_to "Edit this rotum", edit_rotum_path(@rotum) %> |
+  <%= link_to "Back to rota", rota_path %>
+
+  <%= button_to "Destroy this rotum", @rotum, method: :delete %>
+</div>

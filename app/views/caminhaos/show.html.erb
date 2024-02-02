@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @caminhao %>
+
+<div>
+  <%= link_to "Edit this caminhao", edit_caminhao_path(@caminhao) %> |
+  <%= link_to "Back to caminhaos", caminhaos_path %>
+
+  <%= button_to "Destroy this caminhao", @caminhao, method: :delete %>
+</div>
