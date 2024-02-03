@@ -70,7 +70,12 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-  gem 'cucumber-rails', require: false
+
+  gem "cucumber-rails", :require => false
+  gem "database_cleaner"
+  gem 'rspec-rails'
+  gem 'rspec-expectations'
+
 end
 
 group :actions do

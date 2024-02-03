@@ -36,7 +36,7 @@ Feature: gerenciamento de caminhao de carga
     Then I should be on the Editar Caminhao page of "KXC-5805"
     When I fill in "Status" with "Manutencao"
     And I press "Update Caminhao"
-    Then I must be on the paciente page of "KXC-5805"
+    Then I must be on the caminhao page of "KXC-5805"
     And I should see "Manutencao"
 
   Scenario: 'delete caminhao'
@@ -54,7 +54,7 @@ Feature: gerenciamento de caminhao de carga
     Then I must be on the caminhao page of "KXC-5805"
     And I should see "KXC-5805"
     When I follow "Destroy this caminhao"
-    Then I should be on the caminhoes page
+    Then I am on the caminhoes page
     And I should not see "KXC-5805"
 
 
