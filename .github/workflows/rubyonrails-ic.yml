@@ -61,6 +61,7 @@ jobs:
           PGUSER: rails
         run: |
           echo "SECRET_KEY_BASE=$SECRET_KEY_BASE" >> .env.actions
+          rails db:reset
           rails db:migrate
           rails db:prepare
 
