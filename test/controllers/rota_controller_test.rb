@@ -17,7 +17,7 @@ class RotaControllerTest < ActionDispatch::IntegrationTest
 
   test "should create rotum" do
     assert_difference("Rotum.count") do
-      post rota_url, params: { rotum: { caminhao_id: @rotum.caminhao_id, data_de_chegada: @rotum.data_de_chegada, data_de_partida: @rotum.data_de_partida, observacoes: @rotum.observacoes, ponto_de_chegada: @rotum.ponto_de_chegada, ponto_de_partida: @rotum.ponto_de_partida } }
+      post rota_url, params: { rotum: { caminhao_id: @rotum.caminhao_id, data_de_chegada: @rotum.data_de_chegada, data_de_partida: @rotum.data_de_partida, observacoes: @rotum.observacoes, endereco_chegada: @rotum.endereco_chegada_id, endereco_partida: @rotum.endereco_partida_id } }
     end
 
     assert_redirected_to rotum_url(Rotum.last)
@@ -34,7 +34,7 @@ class RotaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update rotum" do
-    patch rotum_url(@rotum), params: { rotum: { caminhao_id: @rotum.caminhao_id, data_de_chegada: @rotum.data_de_chegada, data_de_partida: @rotum.data_de_partida, observacoes: @rotum.observacoes, ponto_de_chegada: @rotum.ponto_de_chegada, ponto_de_partida: @rotum.ponto_de_partida } }
+    patch rotum_url(@rotum), params: { rotum: { caminhao_id: @rotum.caminhao_id, data_de_chegada: @rotum.data_de_chegada, data_de_partida: @rotum.data_de_partida, observacoes: @rotum.observacoes, endereco_chegada: @rotum.endereco_chegada_id, endereco_partida: @rotum.endereco_partida_id } }
     assert_redirected_to rotum_url(@rotum)
   end
 

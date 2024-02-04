@@ -1,16 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  ponto_de_partida: MyString
-  ponto_de_chegada: MyString
+  endereco_partida: MyString
+  endereco_chegada: MyString
   data_de_partida: 2024-02-02 13:08:24
   data_de_chegada: 2024-02-02 13:08:24
   observacoes: MyString
   caminhao: one
 
 two:
-  ponto_de_partida: MyString
-  ponto_de_chegada: MyString
+  endereco_partida: MyString
+  endereco_chegada: MyString
   data_de_partida: 2024-02-02 13:08:24
   data_de_chegada: 2024-02-02 13:08:24
   observacoes: MyString
