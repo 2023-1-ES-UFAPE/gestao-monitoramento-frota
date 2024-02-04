@@ -23,11 +23,14 @@ class RotaController < ApplicationController
   def create
     @rotum = Rotum.new(rotum_params)
 
+
     respond_to do |format|
       if @rotum.save
         format.html { redirect_to rotum_url(@rotum), notice: "Rotum was successfully created." }
         format.json { render :show, status: :created, location: @rotum }
       else
+        Rails.logger.debug @rotum.errors.full_messages
+        Rails.logger.debug "tstee------------------------------"
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @rotum.errors, status: :unprocessable_entity }
       end
@@ -65,6 +68,6 @@ class RotaController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def rotum_params
-      params.require(:rotum).permit(:ponto_de_partida, :ponto_de_chegada, :data_de_partida, :data_de_chegada, :observacoes, :caminhao_id)
+      params.require(:rotum).permit(:endereco_partida_id, :endereco_chegada_id, :data_de_partida, :data_de_chegada, :observacoes, :caminhao_id)
     end
 end
