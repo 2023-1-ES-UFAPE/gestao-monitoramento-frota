@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_02_174248) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_03_170833) do
   create_table "caminhaos", force: :cascade do |t|
     t.string "modelo"
     t.string "placa"
@@ -41,18 +41,23 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_02_174248) do
   end
 
   create_table "rota", force: :cascade do |t|
-    t.string "ponto_de_partida"
-    t.string "ponto_de_chegada"
     t.datetime "data_de_partida"
     t.datetime "data_de_chegada"
     t.string "observacoes"
     t.integer "caminhao_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "endereco_partida_id"
+    t.integer "endereco_chegada_id"
     t.index ["caminhao_id"], name: "index_rota_on_caminhao_id"
+    t.index ["endereco_chegada_id"], name: "index_rota_on_endereco_chegada_id"
+    t.index ["endereco_partida_id"], name: "index_rota_on_endereco_partida_id"
   end
 
   add_foreign_key "paradas", "caminhaos"
   add_foreign_key "paradas", "enderecos"
   add_foreign_key "rota", "caminhaos"
+  #add_foreign_key "rota", "caminhaos"
+  add_foreign_key "rota", "enderecos", column: "endereco_chegada_id"
+  add_foreign_key "rota", "enderecos", column: "endereco_partida_id"
 end

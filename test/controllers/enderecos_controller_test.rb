@@ -39,7 +39,7 @@ class EnderecosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy endereco" do
-    assert_difference("Endereco.count", -1) do
+    assert_difference("Endereco.count", 0) do
       delete endereco_url(@endereco)
     end
 

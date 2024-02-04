@@ -18,8 +18,8 @@ class RotaTest < ApplicationSystemTestCase
     fill_in "Data de chegada", with: @rotum.data_de_chegada
     fill_in "Data de partida", with: @rotum.data_de_partida
     fill_in "Observacoes", with: @rotum.observacoes
-    fill_in "Ponto de chegada", with: @rotum.ponto_de_chegada
-    fill_in "Ponto de partida", with: @rotum.ponto_de_partida
+    fill_in "Ponto de chegada", with: @rotum.endereco_chegada_id
+    fill_in "Ponto de partida", with: @rotum.endereco_partida_id
     click_on "Create Rotum"
 
     assert_text "Rotum was successfully created"
@@ -34,8 +34,8 @@ class RotaTest < ApplicationSystemTestCase
     fill_in "Data de chegada", with: @rotum.data_de_chegada
     fill_in "Data de partida", with: @rotum.data_de_partida
     fill_in "Observacoes", with: @rotum.observacoes
-    fill_in "Ponto de chegada", with: @rotum.ponto_de_chegada
-    fill_in "Ponto de partida", with: @rotum.ponto_de_partida
+    fill_in "Ponto de chegada", with: @rotum.endereco_chegada_id
+    fill_in "Ponto de partida", with: @rotum.endereco_partida_id
     click_on "Update Rotum"
 
     assert_text "Rotum was successfully updated"

@@ -2,7 +2,6 @@
   <% if rotum.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(rotum.errors.count, "error") %> prohibited this rotum from being saved:</h2>
-
       <ul>
         <% rotum.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -12,13 +11,13 @@
   <% end %>
 
   <div>
-    <%= form.label :ponto_de_partida, style: "display: block" %>
-    <%= form.text_field :ponto_de_partida %>
+    <%= form.label :endereco_partida_id, style: "display: block" %>
+    <%= form.collection_select :endereco_partida_id, Endereco.all, :id, :cidade, { prompt: 'Selecione uma Cidade' }, class: 'form-control' %>
   </div>
 
   <div>
-    <%= form.label :ponto_de_chegada, style: "display: block" %>
-    <%= form.text_field :ponto_de_chegada %>
+    <%= form.label :endereco_chegada_id, style: "display: block" %>
+    <%= form.collection_select :endereco_chegada_id, Endereco.all, :id, :cidade, { prompt: 'Selecione uma Cidade' }, class: 'form-control' %>
   </div>
 
   <div>
@@ -38,7 +37,7 @@
 
   <div>
     <%= form.label :caminhao_id, style: "display: block" %>
-    <%= form.text_field :caminhao_id %>
+    <%= form.collection_select :caminhao_id, Caminhao.all, :id, :placa, { prompt: 'Selecione um Caminhão' }, class: 'form-control' %>
   </div>
 
   <div>

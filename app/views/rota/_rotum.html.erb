@@ -1,12 +1,12 @@
 <div id="<%= dom_id rotum %>">
   <p>
     <strong>Ponto de partida:</strong>
-    <%= rotum.ponto_de_partida %>
+    <%= rotum.endereco_partida.cidade %>
   </p>
 
   <p>
     <strong>Ponto de chegada:</strong>
-    <%= rotum.ponto_de_chegada %>
+    <%= rotum.endereco_chegada.cidade %>
   </p>
 
   <p>
@@ -26,7 +26,7 @@
 
   <p>
     <strong>Caminhao:</strong>
-    <%= rotum.caminhao_id %>
+    <%= rotum.caminhao.placa %>
   </p>
 
 </div>
