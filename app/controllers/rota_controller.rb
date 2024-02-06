@@ -60,6 +60,16 @@ class RotaController < ApplicationController
     end
   end
 
+  def search_rota
+
+    #@rotum = Rotum.includes(:caminhao).where("caminhao.placa = abc")
+    @rota = Rotum.joins(:caminhao).where(caminhao:{placa:params[:q]})
+    @placa = params[:q]
+    respond_to do |format|
+      format.html { render :show_result}
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_rotum
