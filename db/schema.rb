@@ -57,7 +57,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_170833) do
   add_foreign_key "paradas", "caminhaos"
   add_foreign_key "paradas", "enderecos"
   add_foreign_key "rota", "caminhaos"
-  #add_foreign_key "rota", "caminhaos"
   add_foreign_key "rota", "enderecos", column: "endereco_chegada_id"
   add_foreign_key "rota", "enderecos", column: "endereco_partida_id"
 end

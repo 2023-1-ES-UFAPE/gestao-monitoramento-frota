@@ -7,12 +7,8 @@ When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field, value|
   fill_in(field, :with => value)
 end
 
-When('I press {string}') do |button|
-  click_button(button)
-end
-
-Then('I should see {string}') do |text|
-  expect(page).to have_content("#{text}")
+When('I press {string}') do |button_name|
+  click_button(button_name)
 end
 
 Then('I should not see {string}') do |text|
