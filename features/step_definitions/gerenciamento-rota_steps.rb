@@ -23,12 +23,12 @@ When('I press the "Create Endereco" button') do
   click_button('Create Endereco')
 end
 
-Given('I am on the caminhaos page') do
+Given('I am on the Truck page') do
   visit '/caminhaos'
   expect(page).to have_current_path('/caminhaos')
 end
 
-Then('I should be on the new Caminhao pag') do
+Then('I should be on the new Truck page') do
   visit '/caminhaos/new'
   expect(page).to have_current_path('/caminhaos/new')
 end
