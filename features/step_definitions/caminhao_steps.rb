@@ -10,7 +10,7 @@ end
 
 Then('I must be on the caminhao page of {string}') do |string|
   caminhao = Caminhao.find_by(placa: string)
-
+  puts caminhao.inspect
   visit caminhao_path(caminhao)
   expect(page).to have_current_path(caminhao_path(caminhao))
 end
