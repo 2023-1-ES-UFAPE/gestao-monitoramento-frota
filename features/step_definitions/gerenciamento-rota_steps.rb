@@ -3,11 +3,6 @@ Given('I am on the enderecos page') do
   expect(page).to have_current_path('/enderecos')
 end
 
-Given('I am on the caminhao page') do
-  visit '/caminhaos'
-  expect(page).to have_current_path('/caminhaos')
-end
-
 When('I follow_new_endereco') do
   click_link('New endereco')
 end
@@ -82,4 +77,3 @@ Then('I should see an error message indicating that the address of departure and
   expect(page).to have_content("Endereco partida can't be blank")
   expect(page).to have_content("Endereco chegada can't be blank")
 end
-
