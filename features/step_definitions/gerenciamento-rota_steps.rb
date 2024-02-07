@@ -58,3 +58,33 @@ end
 When('I fill in the "Observacoes" field with {string}') do |observations|
   fill_in('Observacoes', with: observations)
 end
+
+Then('I should be on the show page of the last rotum') do
+  last_rotum = Rotum.last
+  expect(page).to have_current_path(rotum_path(last_rotum))
+end
+
+When('I press in "Destroy this rotum"') do
+  click_button('Destroy this rotum')
+end
+
+And('I follow in "Edit this rotum"') do
+  click_link('Edit this rotum')
+end
+
+And('I press in "Update Rotum"') do
+  click_button('Update Rotum')
+end
+
+Then('I should see an error message indicating that a caminhao must be selected') do
+  expect(page).to have_content("Caminhao must exist")
+  expect(page).to have_content("Caminhao can't be blank")
+end
+
+Then('I should see an error message indicating that the address of departure and arrival are required') do
+  expect(page).to have_content("Endereco partida must exist")
+  expect(page).to have_content("Endereco chegada must exist")
+  expect(page).to have_content("Endereco partida can't be blank")
+  expect(page).to have_content("Endereco chegada can't be blank")
+end
+
