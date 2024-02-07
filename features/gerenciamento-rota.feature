@@ -20,7 +20,7 @@ Feature: gerenciamento de rotas
 
     Given I am on the caminhaos page
     And I follow "New caminhao"
-    Then I should be on the new Caminhao page
+    Then I should be on the new Caminhao pag
     When I fill in "Modelo" with "Truck Model"
     And I fill in "Placa" with "XYZ-1234"
     And I fill in "Ano" with "2022"
