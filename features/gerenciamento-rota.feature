@@ -18,9 +18,9 @@ Feature: gerenciamento de rotas
     And I fill in "Cep" with "77750000"
     And I press "Create Endereco"
 
-    Given I am on the caminhaos page
+    Given I am on the Truck page
     And I follow "New caminhao"
-    Then I should be on the new Caminhao pag
+    Then I should be on the new Truck page
     When I fill in "Modelo" with "Truck Model"
     And I fill in "Placa" with "XYZ-1234"
     And I fill in "Ano" with "2022"
@@ -56,9 +56,9 @@ Feature: gerenciamento de rotas
     And I fill in "Cep" with "77750002"
     And I press "Create Endereco"
 
-    Given I am on the caminhaos page
+    Given I am on the Truck page
     And I follow "New caminhao"
-    Then I should be on the new Caminhao pag
+    Then I should be on the new Truck page
     When I fill in "Modelo" with "Truk Model"
     And I fill in "Placa" with "XYL-1234"
     And I fill in "Ano" with "2021"
@@ -99,9 +99,9 @@ Feature: gerenciamento de rotas
     And I fill in "Cep" with "77750002"
     And I press "Create Endereco"
 
-    Given I am on the caminhaos page
+    Given I am on the Truck page
     And I follow "New caminhao"
-    Then I should be on the new Caminhao pag
+    Then I should be on the new Truck page
     When I fill in "Modelo" with "Trucky Model"
     And I fill in "Placa" with "XBL-1234"
     And I fill in "Ano" with "2019"
@@ -157,9 +157,9 @@ Feature: gerenciamento de rotas
     Then I should see an error message indicating that a caminhao must be selected
 
   Scenario: Criar rota sem endereço de partida e de chegada
-    Given I am on the caminhaos page
+    Given I am on the Truck page
     And I follow "New caminhao"
-    Then I should be on the new Caminhao page
+    Then I should be on the new Truck page
     When I fill in "Modelo" with "Truckyi Model"
     And I fill in "Placa" with "XCZ-1234"
     And I fill in "Ano" with "2020"

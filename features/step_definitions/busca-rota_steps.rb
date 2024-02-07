@@ -11,3 +11,15 @@ end
 Then('I see at least one route rendered') do
   assert_selector('div', {:minimum=>1})
 end
+
+Given('I am on the Lorry page') do
+  visit '/caminhaos'
+  expect(page).to have_current_path('/caminhaos')
+end
+
+Then('I should be on the new Lorry page') do
+  visit '/caminhaos/new'
+  expect(page).to have_current_path('/caminhaos/new')
+end
+
+
