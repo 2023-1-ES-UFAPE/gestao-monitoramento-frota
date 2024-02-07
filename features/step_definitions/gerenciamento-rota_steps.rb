@@ -3,6 +3,11 @@ Given('I am on the enderecos page') do
   expect(page).to have_current_path('/enderecos')
 end
 
+Given('I am on the caminhao page') do
+  visit '/caminhaos'
+  expect(page).to have_current_path('/caminhaos')
+end
+
 When('I follow_new_endereco') do
   click_link('New endereco')
 end
