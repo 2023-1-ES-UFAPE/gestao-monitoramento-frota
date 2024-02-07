@@ -3,7 +3,7 @@
   <p style="color: red"><%= @error %></p>
 <% end %>
 <%= form_tag("/search/rota", method: "post") do %>
-  <%= label_tag(:q, "Placa:","style"=>"display:block;") %>
-  <%= text_field_tag(:q) %>
+  <%= label_tag(:placa, "Placa:","style"=>"display:block;") %>
+  <%= text_field_tag(:placa) %>
   <%= submit_tag("Search") %>
 <% end %>
