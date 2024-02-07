@@ -1,0 +1,9 @@
+<h1>Find Rotas</h1>
+<% if !@error.to_s.empty? %>
+  <p style="color: red"><%= @error %></p>
+<% end %>
+<%= form_tag("/search/rota", method: "post") do %>
+  <%= label_tag(:q, "Placa:","style"=>"display:block;") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
