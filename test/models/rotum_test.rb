@@ -19,7 +19,7 @@ class RotumTest < ActiveSupport::TestCase
     endereco2 = Endereco.new(cidade: "recife", cep: 55000000)
     endereco2.save
 
-    rota = Rotum.new(endereco_partida_id: endereco.id, endereco_chegada_id: endereco2.id, data_de_partida: Date.today, data_de_chegada: Date.yesterday, observacoes: "rota teste", caminhao_id: caminhao.id)
+    rota = Rotum.new(endereco_partida_id: endereco.id, endereco_chegada_id: endereco2.id, data_de_partida: Date.current, data_de_chegada: Date.yesterday, observacoes: "rota teste", caminhao_id: caminhao.id)
     assert_not(rota.save)
   end
 
@@ -31,7 +31,7 @@ class RotumTest < ActiveSupport::TestCase
     endereco2 = Endereco.new(cidade: "recife", cep: 55000000)
     endereco2.save
 
-    rota = Rotum.new(endereco_partida_id: endereco.id, endereco_chegada_id: endereco2.id, data_de_partida: Date.today, observacoes: "rota teste", caminhao_id: caminhao.id)
+    rota = Rotum.new(endereco_partida_id: endereco.id, endereco_chegada_id: endereco2.id, data_de_partida: Date.current, observacoes: "rota teste", caminhao_id: caminhao.id)
     assert(rota.save)
   end
 end
