@@ -15,9 +15,9 @@ Feature: Busca de rotas
     Then I see the "Placa may references a caminhao" message
 
   Scenario: Buscar rota com placa de caminhão existente mas sem rotas cadastradas
-    Given I am on the caminhaos page
+    Given I am on the Lorry page
     And I follow "New caminhao"
-    Then I should be on the new Caminhao page
+    Then I should be on the new Lorry page
     When I fill in "Modelo" with "Truck Model"
     And I fill in "Placa" with "XYZ-1234"
     And I fill in "Ano" with "2022"
@@ -47,9 +47,9 @@ Feature: Busca de rotas
     And I fill in "Cep" with "77750002"
     And I press "Create Endereco"
 
-    Given I am on the caminhaos page
+    Given I am on the Lorry page
     And I follow "New caminhao"
-    Then I should be on the new Caminhao pag
+    Then I should be on the new Lorry page
     When I fill in "Modelo" with "Trucky Model"
     And I fill in "Placa" with "XBL-1234"
     And I fill in "Ano" with "2019"
