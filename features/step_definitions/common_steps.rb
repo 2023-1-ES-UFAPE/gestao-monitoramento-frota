@@ -11,6 +11,10 @@ When('I press {string}') do |button_name|
   click_button(button_name)
 end
 
+Then('I should see {string}') do |text|
+  expect(page).to have_content("#{text}")
+end
+
 Then('I should not see {string}') do |text|
   expect(page).to_not have_content("#{text}")
 end
