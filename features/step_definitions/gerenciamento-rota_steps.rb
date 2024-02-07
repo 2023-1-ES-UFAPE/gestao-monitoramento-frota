@@ -28,7 +28,7 @@ Given('I am on the caminhaos page') do
   expect(page).to have_current_path('/caminhaos')
 end
 
-Then('I should be on the new Caminhao page') do
+Then('I should be on the new Caminhao pag') do
   visit '/caminhaos/new'
   expect(page).to have_current_path('/caminhaos/new')
 end
