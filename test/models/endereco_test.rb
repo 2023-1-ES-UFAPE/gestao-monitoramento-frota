@@ -7,7 +7,12 @@ class EnderecoTest < ActiveSupport::TestCase
   end
 
   test "salvar endereco cidade" do
-    endereco = Endereco.new(cidade: "abc", cep: 55293050)
+    endereco = Endereco.new(cidade: "garanhuns", cep: 55293050)
+    assert(endereco.save)
+  end
+
+  test "salvar endereco cep invalido" do
+    endereco = Endereco.new(cidade: "garanhuns", cep: 5)
     assert(endereco.save)
   end
 end
