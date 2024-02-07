@@ -60,6 +60,30 @@ class RotaController < ApplicationController
     end
   end
 
+  def search_rota
+    if params[:q].blank?
+      @error = "Placa may not be empty"
+    else
+      caminhao = Caminhao.where(placa: params[:q])
+
+      if caminhao.empty?
+        @error = "Placa may references a caminhao"
+      end
+    end
+
+    if !@error.to_s.empty?
+      respond_to do |format|
+        format.html { render :search}
+      end
+    else
+      @rota = Rotum.joins(:caminhao).where(caminhao:{placa:params[:q]})
+      @placa = params[:q]
+      respond_to do |format|
+        format.html { render :show_result}
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_rotum
