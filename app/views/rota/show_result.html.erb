@@ -1,7 +1,11 @@
 <h1>Rotas with placa: <%= @placa %></h1>
 
 <div id="rota">
-  <% @rota.each do |rotum| %>
-    <%= render rotum %>
+  <% if @rota.empty? %>
+    <p>No rotas found</p>
+  <%else%>
+    <% @rota.each do |rotum| %>
+      <%= render rotum %>
+    <% end %>
   <% end %>
 </div>

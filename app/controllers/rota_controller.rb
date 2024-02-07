@@ -61,12 +61,26 @@ class RotaController < ApplicationController
   end
 
   def search_rota
+    if params[:q].blank?
+      @error = "Placa may not be empty"
+    else
+      caminhao = Caminhao.where(placa: params[:q])
 
-    #@rotum = Rotum.includes(:caminhao).where("caminhao.placa = abc")
-    @rota = Rotum.joins(:caminhao).where(caminhao:{placa:params[:q]})
-    @placa = params[:q]
-    respond_to do |format|
-      format.html { render :show_result}
+      if caminhao.empty?
+        @error = "Placa may references a caminhao"
+      end
+    end
+
+    if !@error.to_s.empty?
+      respond_to do |format|
+        format.html { render :search}
+      end
+    else
+      @rota = Rotum.joins(:caminhao).where(caminhao:{placa:params[:q]})
+      @placa = params[:q]
+      respond_to do |format|
+        format.html { render :show_result}
+      end
     end
   end
 
