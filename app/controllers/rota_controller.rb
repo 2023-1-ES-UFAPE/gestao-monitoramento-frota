@@ -61,10 +61,10 @@ class RotaController < ApplicationController
   end
 
   def search_rota
-    if params[:q].blank?
+    if params[:placa].blank?
       @error = "Placa may not be empty"
     else
-      caminhao = Caminhao.where(placa: params[:q])
+      caminhao = Caminhao.where(placa: params[:placa])
 
       if caminhao.empty?
         @error = "Placa may references a caminhao"
@@ -76,8 +76,8 @@ class RotaController < ApplicationController
         format.html { render :search}
       end
     else
-      @rota = Rotum.joins(:caminhao).where(caminhao:{placa:params[:q]})
-      @placa = params[:q]
+      @rota = Rotum.joins(:caminhao).where(caminhao:{placa:params[:placa]})
+      @placa = params[:placa]
       respond_to do |format|
         format.html { render :show_result}
       end
