@@ -87,4 +87,3 @@ Then('I should see an error message indicating that the address of departure and
   expect(page).to have_content("Endereco partida can't be blank")
   expect(page).to have_content("Endereco chegada can't be blank")
 end
-
