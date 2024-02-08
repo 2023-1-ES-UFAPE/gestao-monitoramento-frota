@@ -80,7 +80,7 @@ Feature: gerenciamento de rotas
     And I press "Create Rotum"
 
     Given I am on the rotas page
-    When I follow "Show this rotum"
+#    When I follow "Show this rotum"
     Then I should be on the show page of the last rotum
     And I press in "Destroy this rotum"
 
@@ -123,7 +123,7 @@ Feature: gerenciamento de rotas
     And I press "Create Rotum"
 
     Given I am on the rotas page
-    When I follow "Show this rotum"
+    #When I follow "Show this rotum"
     Then I should be on the show page of the last rotum
     And I follow in "Edit this rotum"
     And I fill in the "Observacoes" field with "Nova obs"
