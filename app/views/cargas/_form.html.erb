@@ -37,6 +37,11 @@
   </div>
 
   <div>
+    <%= form.label :caminhao_id, style: "display: block" %>
+    <%= form.collection_select :caminhao_id, Caminhao.all, :id, :placa, { prompt: 'Selecione um Caminhão' }, class: 'form-control' %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
