@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descricao: MyString
+  peso: 9.99
+  volume: 9.99
+  valor: 9.99
+  numero_rastreamento: MyString
+
+two:
+  descricao: MyString
+  peso: 9.99
+  volume: 9.99
+  valor: 9.99
+  numero_rastreamento: MyString

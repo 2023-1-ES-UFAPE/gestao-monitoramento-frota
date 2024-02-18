@@ -1,0 +1,2 @@
+class Carga < ApplicationRecord
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_03_170833) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_18_203142) do
   create_table "caminhaos", force: :cascade do |t|
     t.string "modelo"
     t.string "placa"
@@ -19,6 +19,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_170833) do
     t.string "status"
     t.string "chassi"
     t.datetime "data_ultima_inspecao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cargas", force: :cascade do |t|
+    t.string "descricao"
+    t.decimal "peso"
+    t.decimal "volume"
+    t.decimal "valor"
+    t.string "numero_rastreamento"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

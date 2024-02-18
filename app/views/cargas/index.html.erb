@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Cargas</h1>
+
+<div id="cargas">
+  <% @cargas.each do |carga| %>
+    <%= render carga %>
+    <p>
+      <%= link_to "Show this carga", carga %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New carga", new_carga_path %>
