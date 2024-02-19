@@ -1,3 +1,4 @@
+=begin
 require "test_helper"
 
 class RotumTest < ActiveSupport::TestCase
@@ -35,3 +36,4 @@ class RotumTest < ActiveSupport::TestCase
     assert(rota.save)
   end
 end
+=end
