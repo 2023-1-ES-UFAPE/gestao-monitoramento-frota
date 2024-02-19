@@ -25,7 +25,7 @@ class CargasController < ApplicationController
 
     respond_to do |format|
       if @carga.save
-        format.html { redirect_to carga_url(@carga), notice: "Carga was successfully created." }
+        format.html { redirect_to carga_path(@carga), notice: "Carga was successfully created." }
         format.json { render :show, status: :created, location: @carga }
       else
         format.html { render :new, status: :unprocessable_entity }
