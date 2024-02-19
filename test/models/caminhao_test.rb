@@ -1,4 +1,3 @@
-=begin
 require "test_helper"
 
 class CaminhaoTest < ActiveSupport::TestCase
@@ -17,4 +16,3 @@ class CaminhaoTest < ActiveSupport::TestCase
     assert_not(caminhao.save)
   end
 end
-=end
