@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_03_170833) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_19_151752) do
   create_table "caminhaos", force: :cascade do |t|
     t.string "modelo"
     t.string "placa"
@@ -21,6 +21,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_170833) do
     t.datetime "data_ultima_inspecao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "motorista_id"
+    t.index ["motorista_id"], name: "index_caminhaos_on_motorista_id"
   end
 
   create_table "enderecos", force: :cascade do |t|
@@ -28,6 +30,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_170833) do
     t.integer "cep"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "motoristas", force: :cascade do |t|
+    t.string "nome"
+    t.integer "cpf"
+    t.integer "cnh"
+    t.integer "telefone"
+    t.date "data_nascimento"
+    t.integer "caminhao_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["caminhao_id"], name: "index_motoristas_on_caminhao_id"
   end
 
   create_table "paradas", force: :cascade do |t|
@@ -54,6 +68,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_170833) do
     t.index ["endereco_partida_id"], name: "index_rota_on_endereco_partida_id"
   end
 
+  add_foreign_key "caminhaos", "motoristas"
+  add_foreign_key "motoristas", "caminhaos"
   add_foreign_key "paradas", "caminhaos"
   add_foreign_key "paradas", "enderecos"
   add_foreign_key "rota", "caminhaos"
