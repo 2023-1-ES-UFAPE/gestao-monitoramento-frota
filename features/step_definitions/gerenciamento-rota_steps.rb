@@ -61,6 +61,7 @@ end
 
 Then('I should be on the show page of the last rotum') do
   last_rotum = Rotum.last
+  visit rotum_path(last_rotum)
   expect(page).to have_current_path(rotum_path(last_rotum))
 end
 
