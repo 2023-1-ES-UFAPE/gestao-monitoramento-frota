@@ -23,6 +23,16 @@ When('I press the "Create Endereco" button') do
   click_button('Create Endereco')
 end
 
+Given('I am on the Truck page') do
+  visit '/caminhaos'
+  expect(page).to have_current_path('/caminhaos')
+end
+
+Then('I should be on the new Truck page') do
+  visit '/caminhaos/new'
+  expect(page).to have_current_path('/caminhaos/new')
+end
+
 Given('I am on the rotas page') do
   visit '/rota'
   expect(page).to have_current_path('/rota')
@@ -51,6 +61,7 @@ end
 
 Then('I should be on the show page of the last rotum') do
   last_rotum = Rotum.last
+  visit rotum_path(last_rotum)
   expect(page).to have_current_path(rotum_path(last_rotum))
 end
 
@@ -77,4 +88,3 @@ Then('I should see an error message indicating that the address of departure and
   expect(page).to have_content("Endereco partida can't be blank")
   expect(page).to have_content("Endereco chegada can't be blank")
 end
-

@@ -25,6 +25,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_19_151752) do
     t.index ["motorista_id"], name: "index_caminhaos_on_motorista_id"
   end
 
+  create_table "cargas", force: :cascade do |t|
+    t.string "descricao"
+    t.decimal "peso"
+    t.decimal "volume"
+    t.decimal "valor"
+    t.string "numero_rastreamento"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "caminhao_id", null: false
+    t.index ["caminhao_id"], name: "index_cargas_on_caminhao_id"
+  end
+
   create_table "enderecos", force: :cascade do |t|
     t.string "cidade"
     t.integer "cep"
@@ -70,6 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_19_151752) do
 
   add_foreign_key "caminhaos", "motoristas"
   add_foreign_key "motoristas", "caminhaos"
+  add_foreign_key "cargas", "caminhaos"
   add_foreign_key "paradas", "caminhaos"
   add_foreign_key "paradas", "enderecos"
   add_foreign_key "rota", "caminhaos"
