@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @carga %>
+
+<div>
+  <%= link_to "Edit this carga", edit_carga_path(@carga) %> |
+  <%= link_to "Back to cargas", cargas_path %>
+
+  <%= button_to "Destroy this carga", @carga, method: :delete %>
+</div>

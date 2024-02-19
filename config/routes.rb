@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cargas
   resources :paradas
   resources :caminhaos
   resources :enderecos
