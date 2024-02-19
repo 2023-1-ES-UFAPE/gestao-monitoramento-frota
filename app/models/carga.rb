@@ -1,6 +1,6 @@
 class Carga < ApplicationRecord
   belongs_to :caminhao
-  has_many :rotum, through: :caminhao
+  #has_many :rotum, through: :caminhao
 
   validates :descricao, presence: true
   validates :peso, presence: true, numericality: { greater_than: 0 }
