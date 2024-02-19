@@ -60,7 +60,7 @@ class CargasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_carga
-      @carga = current_user.cargas.find(params[:id])
+      @carga = Carga.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
