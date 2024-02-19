@@ -68,8 +68,8 @@ And('I press in "Destroy this carga"') do
   click_button('Destroy this carga')
 end
 
-Then('I should see error message indicating that a caminhao must be selected') do
-  expect(page).to have_content("Caminhao must exist")
+Then('I should see error message indicating that a rota must be selected') do
+  expect(page).to have_content("Rota can't be blank")
 end
 
 Then('I should see an error message indicating that a valor must be selected') do
