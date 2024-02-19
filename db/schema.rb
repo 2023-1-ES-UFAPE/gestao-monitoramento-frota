@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_18_203142) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_18_220930) do
   create_table "caminhaos", force: :cascade do |t|
     t.string "modelo"
     t.string "placa"
@@ -31,6 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_18_203142) do
     t.string "numero_rastreamento"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "caminhao_id", null: false
+    t.index ["caminhao_id"], name: "index_cargas_on_caminhao_id"
   end
 
   create_table "enderecos", force: :cascade do |t|
@@ -64,6 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_18_203142) do
     t.index ["endereco_partida_id"], name: "index_rota_on_endereco_partida_id"
   end
 
+  add_foreign_key "cargas", "caminhaos"
   add_foreign_key "paradas", "caminhaos"
   add_foreign_key "paradas", "enderecos"
   add_foreign_key "rota", "caminhaos"
