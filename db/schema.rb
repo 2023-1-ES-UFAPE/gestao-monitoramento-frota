@@ -81,8 +81,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_19_151752) do
   end
 
   add_foreign_key "caminhaos", "motoristas"
-  add_foreign_key "motoristas", "caminhaos"
   add_foreign_key "cargas", "caminhaos"
+  add_foreign_key "motoristas", "caminhaos"
   add_foreign_key "paradas", "caminhaos"
   add_foreign_key "paradas", "enderecos"
   add_foreign_key "rota", "caminhaos"
