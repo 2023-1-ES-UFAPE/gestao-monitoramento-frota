@@ -1,4 +1,3 @@
-=begin
 require "test_helper"
 
 class EnderecoTest < ActiveSupport::TestCase
@@ -17,4 +16,3 @@ class EnderecoTest < ActiveSupport::TestCase
     assert_not(endereco.save)
   end
 end
-=end

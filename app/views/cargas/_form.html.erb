@@ -37,8 +37,8 @@
   </div>
 
   <div>
-    <%= form.label :caminhao_id, style: "display: block" %>
-    <%= form.collection_select :caminhao_id, Caminhao.all, :id, :placa, { prompt: 'Selecione um Caminhão' }, class: 'form-control' %>
+    <%= form.label :rota_id, style: "display: block" %>
+    <%= form.collection_select :rota_id, Rotum.all, :id, :observacoes, { prompt: 'Selecione uma Rota' }, class: 'form-control' %>
   </div>
 
   <div>
