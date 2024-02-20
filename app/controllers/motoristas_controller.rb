@@ -59,11 +59,14 @@ class MotoristasController < ApplicationController
 
   def search_rotas
     if params[:cpf].blank?
-      @error = "Cpf nao pode esta vazio"
+      @error = "Cpf/Nome nao pode esta vazio"
     else
-      motorista = Motorista.where(cpf: params[:cpf])
-      if motorista.empty?
-        @error = "Placa may references a caminhao"
+      motorista_cpf = Motorista.where(cpf: params[:cpf])
+      motorista_nome = Motorista.where(nome: params[:cpf])
+
+      if motorista_cpf.empty? and motorista_nome.empty?
+        @error = "Sem motoristas com esse nome/cpf"
+      else
       end
     end
 
@@ -72,8 +75,15 @@ class MotoristasController < ApplicationController
         format.html { render :search}
       end
     else
-      @rota = Rotum.joins(:motorista).where(motorista:{ cpf:params[:cpf] })
-      @motorista = Motorista.find_by(cpf: params[:cpf])
+
+      if motorista_cpf.empty?
+        @motorista = Motorista.find_by(nome: params[:cpf])
+      else
+        @motorista = Motorista.find_by(cpf: params[:cpf])
+      end
+
+      @rota = Rotum.joins(:motorista).where(motorista:{ cpf: @motorista.cpf })
+
       respond_to do |format|
         format.html { render :show_result}
       end

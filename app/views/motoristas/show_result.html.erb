@@ -2,7 +2,7 @@
   <% if @rota.empty? %>
     <p>Nenhuma rota registrada</p>
   <%else%>
-    <h1>Rotas com CPF: <%= @motorista.cpf %></h1>
+    <h1>Rotas de <%= @motorista.nome %>, CPF: <%= @motorista.cpf %></h1>
     <% @rota.each do |rotum| %>
       <%= render rotum %>
     <% end %>
