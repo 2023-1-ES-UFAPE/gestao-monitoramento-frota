@@ -66,7 +66,6 @@ class MotoristasController < ApplicationController
 
       if motorista_cpf.empty? and motorista_nome.empty?
         @error = "Sem motoristas com esse nome/cpf"
-      else
       end
     end
 
