@@ -77,13 +77,15 @@ class MotoristasController < ApplicationController
     else
 
       if motorista_cpf.empty?
+        puts "pesquisou por nome"
         @motorista = Motorista.find_by(nome: params[:cpf])
       else
+        puts "pesquisou por cpf"
         @motorista = Motorista.find_by(cpf: params[:cpf])
       end
 
-      @rotas = Rotum.joins(caminhao: :motorista).where(motoristas: { id: @motorista.id })
-
+      @rotas = Rotum.joins(caminhao: :motorista).where(motoristas: { nome: @motorista.nome })
+      print(@rotas.inspect)
       respond_to do |format|
         format.html { render :show_result}
       end
