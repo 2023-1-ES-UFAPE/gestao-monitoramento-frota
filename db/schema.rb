@@ -21,20 +21,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_19_182433) do
     t.datetime "data_ultima_inspecao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "motorista_id"
-    t.index ["motorista_id"], name: "index_caminhaos_on_motorista_id"
-  end
-
-  create_table "cargas", force: :cascade do |t|
-    t.string "descricao"
-    t.decimal "peso"
-    t.decimal "volume"
-    t.decimal "valor"
-    t.string "numero_rastreamento"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "caminhao_id", null: false
-    t.index ["caminhao_id"], name: "index_cargas_on_caminhao_id"
   end
 
   create_table "cargas", force: :cascade do |t|
@@ -62,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_19_182433) do
     t.integer "cnh"
     t.integer "telefone"
     t.date "data_nascimento"
-    t.integer "caminhao_id", null: false
+    t.integer "caminhao_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["caminhao_id"], name: "index_motoristas_on_caminhao_id"
@@ -92,9 +78,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_19_182433) do
     t.index ["endereco_partida_id"], name: "index_rota_on_endereco_partida_id"
   end
 
-  add_foreign_key "caminhaos", "motoristas"
-  add_foreign_key "motoristas", "caminhaos"
   add_foreign_key "cargas", "rota", column: "rota_id"
+  add_foreign_key "motoristas", "caminhaos"
   add_foreign_key "paradas", "caminhaos"
   add_foreign_key "paradas", "enderecos"
   add_foreign_key "rota", "caminhaos"

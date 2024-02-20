@@ -6,7 +6,7 @@ class CreateMotoristas < ActiveRecord::Migration[7.0]
       t.integer :cnh
       t.integer :telefone
       t.date :data_nascimento
-      t.references :caminhao, null: false, foreign_key: true
+      t.references :caminhao, foreign_key: true
 
       t.timestamps
     end
