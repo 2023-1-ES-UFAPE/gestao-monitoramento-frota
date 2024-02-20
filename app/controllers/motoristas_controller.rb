@@ -57,6 +57,30 @@ class MotoristasController < ApplicationController
     end
   end
 
+  def search_rota
+    if params[:cpf].blank?
+      @error = "Cpf nao pode esta vazio"
+    else
+      motorista = Motorista.where(cpf: params[:cpf])
+
+      if motorista.empty?
+        @error = "Placa may references a caminhao"
+      end
+    end
+
+    if !@error.to_s.empty?
+      respond_to do |format|
+        format.html { render :search}
+      end
+    else
+      @rota = Rotum.joins(:motorista).where(motorista:{cpf:params[:cpf]})
+      @cpf = params[:cpf]
+      respond_to do |format|
+        format.html { render :show_result}
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_motorista
