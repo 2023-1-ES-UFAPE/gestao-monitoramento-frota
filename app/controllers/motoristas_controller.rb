@@ -57,6 +57,40 @@ class MotoristasController < ApplicationController
     end
   end
 
+  def search_rotas
+    if params[:cpf].blank?
+      @error = "Cpf/Nome nao pode esta vazio"
+    else
+      motorista_cpf = Motorista.where(cpf: params[:cpf])
+      motorista_nome = Motorista.where(nome: params[:cpf])
+
+      if motorista_cpf.empty? and motorista_nome.empty?
+        @error = "Sem motoristas com esse nome/cpf"
+      end
+    end
+
+    if !@error.to_s.empty?
+      respond_to do |format|
+        format.html { render :search}
+      end
+    else
+
+      if motorista_cpf.empty?
+        puts "pesquisou por nome"
+        @motorista = Motorista.find_by(nome: params[:cpf])
+      else
+        puts "pesquisou por cpf"
+        @motorista = Motorista.find_by(cpf: params[:cpf])
+      end
+
+      @rotas = Rotum.joins(caminhao: :motorista).where(motoristas: { nome: @motorista.nome })
+      print(@rotas.inspect)
+      respond_to do |format|
+        format.html { render :show_result}
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_motorista
