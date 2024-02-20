@@ -57,7 +57,7 @@ class MotoristasController < ApplicationController
     end
   end
 
-  def search_rota
+  def search_rotas
     if params[:cpf].blank?
       @error = "Cpf nao pode esta vazio"
     else
@@ -73,7 +73,7 @@ class MotoristasController < ApplicationController
         format.html { render :search}
       end
     else
-      @rota = Rotum.joins(:motorista).where(motorista:{cpf:params[:cpf]})
+      @rota = Rotum.joins(:motorista).where(motorista:{ cpf:params[:cpf] })
       @cpf = params[:cpf]
       respond_to do |format|
         format.html { render :show_result}
