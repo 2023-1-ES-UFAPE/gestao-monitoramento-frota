@@ -42,6 +42,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_19_182433) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "motoristas", force: :cascade do |t|
+    t.string "nome"
+    t.integer "cpf"
+    t.integer "cnh"
+    t.integer "telefone"
+    t.date "data_nascimento"
+    t.integer "caminhao_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["caminhao_id"], name: "index_motoristas_on_caminhao_id"
+  end
+
   create_table "paradas", force: :cascade do |t|
     t.datetime "data_parada"
     t.integer "endereco_id", null: false
@@ -67,6 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_19_182433) do
   end
 
   add_foreign_key "cargas", "rota", column: "rota_id"
+  add_foreign_key "motoristas", "caminhaos"
   add_foreign_key "paradas", "caminhaos"
   add_foreign_key "paradas", "enderecos"
   add_foreign_key "rota", "caminhaos"
