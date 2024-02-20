@@ -1,10 +1,11 @@
 <div id="rota">
-  <% if @rota.empty? %>
+  <% if @rotas.empty? %>
     <p>Nenhuma rota registrada</p>
   <%else%>
     <h1>Rotas de <%= @motorista.nome %>, CPF: <%= @motorista.cpf %></h1>
-    <% @rota.each do |rotum| %>
+    <% @rotas.each do |rotum| %>
       <%= render rotum %>
+      <div>---</div>
     <% end %>
   <% end %>
 </div>

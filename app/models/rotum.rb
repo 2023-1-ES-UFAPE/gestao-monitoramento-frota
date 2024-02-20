@@ -1,6 +1,5 @@
 class Rotum < ApplicationRecord
   belongs_to :caminhao
-  belongs_to :motorista
 
   belongs_to :endereco_partida, class_name: 'Endereco', foreign_key: 'endereco_partida_id'
   belongs_to :endereco_chegada, class_name: 'Endereco', foreign_key: 'endereco_chegada_id'

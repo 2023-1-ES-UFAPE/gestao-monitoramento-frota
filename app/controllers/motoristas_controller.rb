@@ -82,7 +82,7 @@ class MotoristasController < ApplicationController
         @motorista = Motorista.find_by(cpf: params[:cpf])
       end
 
-      @rota = Rotum.joins(:motorista).where(motorista:{ cpf: @motorista.cpf })
+      @rotas = Rotum.joins(caminhao: :motorista).where(motoristas: { id: @motorista.id })
 
       respond_to do |format|
         format.html { render :show_result}

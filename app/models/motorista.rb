@@ -1,7 +1,5 @@
 class Motorista < ApplicationRecord
   belongs_to :caminhao
-  has_many :rotums
-
 
   validates :nome, presence: true, length: { minimum: 5, maximum: 50 }
   validates :cpf, presence: true, length: { is: 11}, numericality: true

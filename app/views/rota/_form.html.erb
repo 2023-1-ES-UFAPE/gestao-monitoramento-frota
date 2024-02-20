@@ -41,11 +41,6 @@
   </div>
 
   <div>
-    <%= form.label :motorista_id, style: "display: block" %>
-    <%= form.collection_select :motorista_id, Motorista.all, :id, :cpf, { prompt: 'Selecione um Motorista' }, class: 'form-control' %>
-  </div>
-
-  <div>
     <%= form.submit %>
   </div>
 <% end %>
