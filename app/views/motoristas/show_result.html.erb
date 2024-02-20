@@ -1,9 +1,8 @@
-<h1>Rotas com CPF: <%= @cpf %></h1>
-
 <div id="rota">
   <% if @rota.empty? %>
     <p>Nenhuma rota registrada</p>
   <%else%>
+    <h1>Rotas com CPF: <%= @motorista.cpf %></h1>
     <% @rota.each do |rotum| %>
       <%= render rotum %>
     <% end %>

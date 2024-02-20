@@ -62,7 +62,6 @@ class MotoristasController < ApplicationController
       @error = "Cpf nao pode esta vazio"
     else
       motorista = Motorista.where(cpf: params[:cpf])
-
       if motorista.empty?
         @error = "Placa may references a caminhao"
       end
@@ -74,7 +73,7 @@ class MotoristasController < ApplicationController
       end
     else
       @rota = Rotum.joins(:motorista).where(motorista:{ cpf:params[:cpf] })
-      @cpf = params[:cpf]
+      @motorista = Motorista.find_by(cpf: params[:cpf])
       respond_to do |format|
         format.html { render :show_result}
       end

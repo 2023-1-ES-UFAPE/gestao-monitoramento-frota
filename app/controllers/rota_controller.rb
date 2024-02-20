@@ -92,6 +92,6 @@ class RotaController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def rotum_params
-      params.require(:rotum).permit(:endereco_partida_id, :endereco_chegada_id, :data_de_partida, :data_de_chegada, :observacoes, :caminhao_id)
+      params.require(:rotum).permit(:endereco_partida_id, :endereco_chegada_id, :data_de_partida, :data_de_chegada, :observacoes, :caminhao_id, :motorista_id)
     end
 end
