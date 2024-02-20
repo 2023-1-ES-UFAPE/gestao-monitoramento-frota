@@ -1,6 +1,7 @@
 class Caminhao < ApplicationRecord
   has_one :rotum, dependent: :destroy
   has_many :paradas, dependent: :destroy
+  has_one :motorista
 
   validates :modelo, presence: true, length: {minimum:8}
   validates :placa, presence: true, length: {maximum:12}

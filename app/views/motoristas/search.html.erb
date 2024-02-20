@@ -1,0 +1,9 @@
+<h1>Encontrar Rotas de um motorista</h1>
+<% if !@error.to_s.empty? %>
+  <p style="color: red"><%= @error %></p>
+<% end %>
+<%= form_tag("/search/motorista", method: "post") do %>
+  <%= label_tag(:cpf, "Cpf ou Nome:","style"=>"display:block;") %>
+  <%= text_field_tag(:cpf) %>
+  <%= submit_tag("Search") %>
+<% end %>
