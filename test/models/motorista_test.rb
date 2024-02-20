@@ -13,7 +13,7 @@ class MotoristaTest < ActiveSupport::TestCase
   end
 
   test "salvar motorista campos invalidos" do
-    motorista = Motorista.new(nome:"a", cpf:1, cnh:1, telefone:1, data_nascimento: "01/01/2054", caminhao: 1)
+    motorista = Motorista.new(nome:"a", cpf:1, cnh:1, telefone:1, data_nascimento: "01/01/2054", caminhao_id: 1)
     assert_not(motorista.save)
   end
 end
