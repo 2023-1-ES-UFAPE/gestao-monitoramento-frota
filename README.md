@@ -3,12 +3,11 @@
 
 ## :octocat: Integrantes
 
-- [Lucas Victor](https://github.com/lucasvictoor)
-- [Sara Abreu](https://github.com/ynjisng)
-- [Ricardo Martins](https://github.com/RickyM7)
-- [Vandielson Tenório](https://github.com/Vandielson)
-- [Lucas Emanoel](https://github.com/LucasEmanoel)
 - [Juan Gustavo](https://github.com/JuanGustah)
+- [Lucas Emanoel](https://github.com/LucasEmanoel)
+- [Lucas Victor](https://github.com/lucasvictoor)
+- [Ricardo Martins](https://github.com/RickyM7)
+- [Sara Abreu](https://github.com/ynjisng)
 
 ## :page_with_curl: Sobre o projeto
 
