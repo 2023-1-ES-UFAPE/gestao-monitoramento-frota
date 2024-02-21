@@ -24,13 +24,13 @@ When('I press the "Create Endereco" button') do
 end
 
 Given('I am on the Truck page') do
-  visit '/caminhoes'
-  expect(page).to have_current_path('/caminhoes')
+  visit '/caminhaos'
+  expect(page).to have_current_path('/caminhaos')
 end
 
 Then('I should be on the new Truck page') do
-  visit '/caminhoes/new'
-  expect(page).to have_current_path('/caminhoes/new')
+  visit '/caminhaos/new'
+  expect(page).to have_current_path('/caminhaos/new')
 end
 
 Given('I am on the rotas page') do

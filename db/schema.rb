@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_21_104531) do
-  create_table "caminhoes", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2024_02_19_182433) do
+  create_table "caminhaos", force: :cascade do |t|
     t.string "modelo"
     t.string "placa"
     t.integer "ano"
@@ -79,10 +79,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_21_104531) do
   end
 
   add_foreign_key "cargas", "rota", column: "rota_id"
-  add_foreign_key "motoristas", "caminhoes"
-  add_foreign_key "paradas", "caminhoes"
+  add_foreign_key "motoristas", "caminhaos"
+  add_foreign_key "paradas", "caminhaos"
   add_foreign_key "paradas", "enderecos"
-  add_foreign_key "rota", "caminhoes"
+  add_foreign_key "rota", "caminhaos"
   add_foreign_key "rota", "enderecos", column: "endereco_chegada_id"
   add_foreign_key "rota", "enderecos", column: "endereco_partida_id"
 end
