@@ -1,6 +1,6 @@
 class CreateCaminhaos < ActiveRecord::Migration[7.0]
   def change
-    create_table :caminhaos do |t|
+    create_table :caminhoes do |t|
       t.string :modelo
       t.string :placa
       t.integer :ano

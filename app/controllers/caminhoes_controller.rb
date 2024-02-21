@@ -1,25 +1,25 @@
-class CaminhaosController < ApplicationController
+class CaminhoesController < ApplicationController
   before_action :set_caminhao, only: %i[ show edit update destroy ]
 
-  # GET /caminhaos or /caminhaos.json
+  # GET /caminhoes or /caminhoes.json
   def index
-    @caminhaos = Caminhao.all
+    @caminhoes = Caminhao.all
   end
 
-  # GET /caminhaos/1 or /caminhaos/1.json
+  # GET /caminhoes/1 or /caminhoes/1.json
   def show
   end
 
-  # GET /caminhaos/new
+  # GET /caminhoes/new
   def new
     @caminhao = Caminhao.new
   end
 
-  # GET /caminhaos/1/edit
+  # GET /caminhoes/1/edit
   def edit
   end
 
-  # POST /caminhaos or /caminhaos.json
+  # POST /caminhoes or /caminhoes.json
   def create
     @caminhao = Caminhao.new(caminhao_params)
 
@@ -34,7 +34,7 @@ class CaminhaosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /caminhaos/1 or /caminhaos/1.json
+  # PATCH/PUT /caminhoes/1 or /caminhoes/1.json
   def update
     respond_to do |format|
       if @caminhao.update(caminhao_params)
@@ -47,12 +47,12 @@ class CaminhaosController < ApplicationController
     end
   end
 
-  # DELETE /caminhaos/1 or /caminhaos/1.json
+  # DELETE /caminhoes/1 or /caminhoes/1.json
   def destroy
     @caminhao.destroy
 
     respond_to do |format|
-      format.html { redirect_to caminhaos_url, notice: "Caminhao was successfully destroyed." }
+      format.html { redirect_to caminhoes_url, notice: "Caminhao was successfully destroyed." }
       format.json { head :no_content }
     end
   end

@@ -1,11 +1,11 @@
 Given('I am on the caminhoes page') do
-  visit '/caminhaos'
-  expect(page).to have_current_path('/caminhaos')
+  visit '/caminhoes'
+  expect(page).to have_current_path('/caminhoes')
 end
 
 Then('I should be on the new Caminhao page') do
-  visit '/caminhaos/new'
-  expect(page).to have_current_path('/caminhaos/new')
+  visit '/caminhoes/new'
+  expect(page).to have_current_path('/caminhoes/new')
 end
 
 Then('I must be on the caminhao page of {string}') do |string|

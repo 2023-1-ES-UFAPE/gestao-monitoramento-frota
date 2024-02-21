@@ -1,6 +1,6 @@
 Given('I am on caminhoes page') do
-  visit '/caminhaos'
-  expect(page).to have_current_path('/caminhaos')
+  visit '/caminhoes'
+  expect(page).to have_current_path('/caminhoes')
 end
 
 When('I follow the "New caminhao"') do
@@ -8,8 +8,8 @@ When('I follow the "New caminhao"') do
 end
 
 Then('I should be on new Caminhao page') do
-  visit '/caminhaos/new'
-  expect(page).to have_current_path('/caminhaos/new')
+  visit '/caminhoes/new'
+  expect(page).to have_current_path('/caminhoes/new')
 end
 
 Given('I am on the Carga page') do

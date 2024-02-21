@@ -2,7 +2,7 @@ require "test_helper"
 
 class MotoristaTest < ActiveSupport::TestCase
   test "salvar motorista" do
-    caminhao = caminhaos(:one)
+    caminhao = caminhoes(:one)
     motorista = Motorista.new(nome:"Sergio", cpf:12345678910, cnh:12345678910, telefone:12345678910, data_nascimento: "01/01/1994", caminhao: caminhao)
     assert(motorista.save)
   end

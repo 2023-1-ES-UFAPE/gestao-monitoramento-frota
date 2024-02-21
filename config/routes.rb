@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :cargas
   resources :motoristas
   resources :paradas
-  resources :caminhaos
+  resources :caminhoes
   resources :enderecos
   resources :rota
 
