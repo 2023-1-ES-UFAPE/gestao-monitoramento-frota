@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_19_182433) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_24_070059) do
   create_table "caminhaos", force: :cascade do |t|
     t.string "modelo"
     t.string "placa"
@@ -76,6 +76,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_19_182433) do
     t.index ["caminhao_id"], name: "index_rota_on_caminhao_id"
     t.index ["endereco_chegada_id"], name: "index_rota_on_endereco_chegada_id"
     t.index ["endereco_partida_id"], name: "index_rota_on_endereco_partida_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "cargas", "rota", column: "rota_id"
