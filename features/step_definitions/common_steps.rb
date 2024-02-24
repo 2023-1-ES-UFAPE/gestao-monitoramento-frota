@@ -20,11 +20,11 @@ Then('I should not see {string}') do |text|
 end
 
 # passos de autenticação antes dos testes do cucumber
-Given /^I am not authenticated$/ do
+Given(/^I am not authenticated$/) do
   visit('/users/sign_out') # ensure that at least
 end
 
-Given /^I am a new, authenticated user$/ do
+Given(/^I am a new, authenticated user$/) do
   email = 'testing@man.net'
   password = 'secretpass'
   User.new(:email => email, :password => password, :password_confirmation => password).save!
