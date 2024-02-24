@@ -1,10 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @endereco %>
+<%= render @endereco_atual %>
 
 <div>
-  <%= link_to "Edit this endereco", edit_endereco_path(@endereco) %> |
+  <%= link_to "Edit this endereco", edit_endereco_path(@endereco_atual) %> |
   <%= link_to "Back to enderecos", enderecos_path %>
 
-  <%= button_to "Destroy this endereco", @endereco, method: :delete %>
+  <%= button_to "Destroy this endereco", @endereco_atual, method: :delete %>
 </div>
