@@ -4,7 +4,7 @@
       <h2><%= pluralize(carga.errors.count, "error") %> prohibited this carga from being saved:</h2>
 
       <ul>
-        <% carga.errors.each do |error| %>
+        <% @carga_atual.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
