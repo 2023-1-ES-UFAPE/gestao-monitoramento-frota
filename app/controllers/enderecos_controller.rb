@@ -25,8 +25,7 @@ class EnderecosController < ApplicationController
 
     respond_to do |format|
       if @endereco_atual.save
-        format.html { redirect_to endereco_url(@endereco_atual), notice: "Endereco was successfully created." }
-        format.json { render :show, status: :created, location: @endereco_atual }
+        endereco_success(format, :created, "created")
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @endereco_atual.errors, status: :unprocessable_entity }
@@ -38,8 +37,7 @@ class EnderecosController < ApplicationController
   def update
     respond_to do |format|
       if @endereco_atual.update(endereco_params)
-        format.html { redirect_to endereco_url(@endereco_atual), notice: "Endereco was successfully updated." }
-        format.json { render :show, status: :ok, location: @endereco_atual }
+        endereco_success(format, :ok, "updated")
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @endereco_atual.errors, status: :unprocessable_entity }
@@ -58,7 +56,13 @@ class EnderecosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
+  def endereco_success(format, status, method)
+    format.html { redirect_to endereco_url(@endereco_atual), notice: "Endereco was successfully #{method}." }
+    format.json { render :show, status: status, location: @endereco_atual }
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
     def set_endereco
       @endereco_atual = Endereco.find(params[:id])
     end
