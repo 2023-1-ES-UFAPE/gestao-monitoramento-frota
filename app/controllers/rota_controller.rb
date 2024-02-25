@@ -26,8 +26,7 @@ class RotaController < ApplicationController
 
     respond_to do |format|
       if @rotum.save
-        format.html { redirect_to rotum_url(@rotum), notice: "Rotum was successfully created." }
-        format.json { render :show, status: :created, location: @rotum }
+        rota_success(format, :created, "created")
       else
         Rails.logger.debug @rotum.errors.full_messages
         Rails.logger.debug "tstee------------------------------"
@@ -41,8 +40,7 @@ class RotaController < ApplicationController
   def update
     respond_to do |format|
       if @rotum.update(rotum_params)
-        format.html { redirect_to rotum_url(@rotum), notice: "Rotum was successfully updated." }
-        format.json { render :show, status: :ok, location: @rotum }
+        rota_success(format, :ok, "updated")
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @rotum.errors, status: :unprocessable_entity }
@@ -85,7 +83,13 @@ class RotaController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
+  def rota_success(format, status, method)
+    format.html { redirect_to rotum_url(@rotum), notice: "Rotum was successfully #{method}." }
+    format.json { render :show, status: status, location: @rotum }
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
     def set_rotum
       @rotum = Rotum.find(params[:id])
     end
