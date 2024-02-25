@@ -25,8 +25,7 @@ class CaminhaosController < ApplicationController
 
     respond_to do |format|
       if @caminhao_atual.save
-        format.html { redirect_to caminhao_url(@caminhao_atual), notice: "Caminhao was successfully created." }
-        format.json { render :show, status: :created, location: @caminhao_atual }
+        caminhao_success(format, :created, "created")
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @caminhao_atual.errors, status: :unprocessable_entity }
@@ -38,8 +37,7 @@ class CaminhaosController < ApplicationController
   def update
     respond_to do |format|
       if @caminhao_atual.update(caminhao_params)
-        format.html { redirect_to caminhao_url(@caminhao_atual), notice: "Caminhao was successfully updated." }
-        format.json { render :show, status: :ok, location: @caminhao_atual }
+        caminhao_success(format, :ok, "updated")
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @caminhao_atual.errors, status: :unprocessable_entity }
@@ -58,13 +56,19 @@ class CaminhaosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_caminhao
-      @caminhao_atual = Caminhao.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def caminhao_params
-      params.require(:caminhao).permit(:modelo, :placa, :ano, :capacidade, :status, :chassi, :data_ultima_inspecao)
-    end
+  def caminhao_success(format, status, method)
+    format.html { redirect_to caminhao_url(@caminhao_atual), notice: "Caminhao was successfully #{method}." }
+    format.json { render :show, status: status, location: @caminhao_atual }
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_caminhao
+    @caminhao_atual = Caminhao.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def caminhao_params
+    params.require(:caminhao).permit(:modelo, :placa, :ano, :capacidade, :status, :chassi, :data_ultima_inspecao)
+  end
 end
