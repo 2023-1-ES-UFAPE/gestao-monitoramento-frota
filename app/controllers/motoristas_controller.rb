@@ -25,8 +25,7 @@ class MotoristasController < ApplicationController
 
     respond_to do |format|
       if @motorista.save
-        format.html { redirect_to motorista_url(@motorista), notice: "Motorista was successfully created." }
-        format.json { render :show, status: :created, location: @motorista }
+        motorista_success(format, :created, "created")
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @motorista.errors, status: :unprocessable_entity }
@@ -38,8 +37,7 @@ class MotoristasController < ApplicationController
   def update
     respond_to do |format|
       if @motorista.update(motorista_params)
-        format.html { redirect_to motorista_url(@motorista), notice: "Motorista was successfully updated." }
-        format.json { render :show, status: :ok, location: @motorista }
+        motorista_success(format, :ok, "updated")
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @motorista.errors, status: :unprocessable_entity }
@@ -92,13 +90,19 @@ class MotoristasController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_motorista
-      @motorista = Motorista.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def motorista_params
-      params.require(:motorista).permit(:nome, :cpf, :cnh, :telefone, :data_nascimento, :caminhao_id)
-    end
+  def motorista_success(format, status, method)
+    format.html { redirect_to motorista_url(@motorista), notice: "Motorista was successfully #{method}." }
+    format.json { render :show, status: status, location: @motorista }
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_motorista
+    @motorista = Motorista.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def motorista_params
+    params.require(:motorista).permit(:nome, :cpf, :cnh, :telefone, :data_nascimento, :caminhao_id)
+  end
 end
