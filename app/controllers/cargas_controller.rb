@@ -12,7 +12,7 @@ class CargasController < ApplicationController
 
   # GET /cargas/new
   def new
-    @carga = Carga.new
+    @carga_atual = Carga.new
   end
 
   # GET /cargas/1/edit
@@ -21,15 +21,15 @@ class CargasController < ApplicationController
 
   # POST /cargas or /cargas.json
   def create
-    @carga = Carga.new(carga_params)
+    @carga_atual = Carga.new(carga_params)
 
     respond_to do |format|
-      if @carga.save
-        format.html { redirect_to carga_path(@carga), notice: "Carga was successfully created." }
-        format.json { render :show, status: :created, location: @carga }
+      if @carga_atual.save
+        format.html { redirect_to carga_path(@carga_atual), notice: "Carga was successfully created." }
+        format.json { render :show, status: :created, location: @carga_atual }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @carga.errors, status: :unprocessable_entity }
+        format.json { render json: @carga_atual.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,19 +37,19 @@ class CargasController < ApplicationController
   # PATCH/PUT /cargas/1 or /cargas/1.json
   def update
     respond_to do |format|
-      if @carga.update(carga_params)
-        format.html { redirect_to carga_url(@carga), notice: "Carga was successfully updated." }
-        format.json { render :show, status: :ok, location: @carga }
+      if @carga_atual.update(carga_params)
+        format.html { redirect_to carga_url(@carga_atual), notice: "Carga was successfully updated." }
+        format.json { render :show, status: :ok, location: @carga_atual }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @carga.errors, status: :unprocessable_entity }
+        format.json { render json: @carga_atual.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /cargas/1 or /cargas/1.json
   def destroy
-    @carga.destroy
+    @carga_atual.destroy
 
     respond_to do |format|
       format.html { redirect_to cargas_url, notice: "Carga was successfully destroyed." }
@@ -60,7 +60,7 @@ class CargasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_carga
-      @carga = Carga.find(params[:id])
+      @carga_atual = Carga.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
