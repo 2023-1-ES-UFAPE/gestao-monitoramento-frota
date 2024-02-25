@@ -49,7 +49,7 @@ class EnderecosController < ApplicationController
 
   # DELETE /enderecos/1 or /enderecos/1.json
   def destroy
-    #@endereco.destroy
+    @endereco_atual.destroy
 
     respond_to do |format|
       format.html { redirect_to enderecos_url, notice: "Endereco was successfully destroyed." }
