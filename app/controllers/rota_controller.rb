@@ -28,8 +28,6 @@ class RotaController < ApplicationController
       if @rotum.save
         rota_success(format, :created, "created")
       else
-        Rails.logger.debug @rotum.errors.full_messages
-        Rails.logger.debug "tstee------------------------------"
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @rotum.errors, status: :unprocessable_entity }
       end
