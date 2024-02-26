@@ -29,4 +29,4 @@ O sistema deve permitir ao administrador autenticar-se de forma segura, cadastra
 ### [Render](https://gestao-monitoramento-frota.onrender.com)
 
 ## :construction: Status do Projeto
-Em andamento
+Concluído
