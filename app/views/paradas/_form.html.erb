@@ -1,6 +1,6 @@
 <%= form_with(model: parada) do |form| %>
   <% if parada.errors.any? %>
-    <div style="color: red">
+    <div style="color: red" class="mb-3">
       <h2><%= pluralize(parada.errors.count, "error") %> prohibited this parada from being saved:</h2>
 
       <ul>
@@ -11,22 +11,24 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :data_parada, style: "display: block" %>
-    <%= form.datetime_field :data_parada %>
+  <div class="p-5 bg-white rounded-lg shadow-lg grid grid-cols-2 gap-y-4 justify-center">
+    <div>
+      <%= form.label :data_parada, style: "display: block" %>
+      <%= form.datetime_field :data_parada %>
+    </div>
+
+    <div>
+      <%= form.label :endereco_id, style: "display: block" %>
+      <%= form.text_field :endereco_id %>
+    </div>
+
+    <div>
+      <%= form.label :caminhao_id, style: "display: block" %>
+      <%= form.text_field :caminhao_id %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :endereco_id, style: "display: block" %>
-    <%= form.text_field :endereco_id %>
-  </div>
-
-  <div>
-    <%= form.label :caminhao_id, style: "display: block" %>
-    <%= form.text_field :caminhao_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="mt-3 h-full flex justify-end">
+    <%= form.submit :class=>"bg-blue-500 text-white rounded py-2 px-3 cursor-pointer transition duration-300 hover:bg-blue-600"%>
   </div>
 <% end %>

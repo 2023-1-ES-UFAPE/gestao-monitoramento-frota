@@ -1,9 +1,13 @@
-<h1>New parada</h1>
+<div class="p-5">
+  <div class="mb-3">
+    <span>
+      <i class="fa-solid fa-chevron-left"></i>
+      <%= link_to "Back to paradas", paradas_path %>
+    </span>
+    <h1 class="text-zinc-800 font-bold text-2xl">New parada</h1>
+  </div>
 
-<%= render "form", parada: @parada %>
+  <%= render "form", parada: @parada %>
 
-<br>
-
-<div>
-  <%= link_to "Back to paradas", paradas_path %>
+  <br>
 </div>
