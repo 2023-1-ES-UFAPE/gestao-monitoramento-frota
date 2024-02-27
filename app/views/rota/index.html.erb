@@ -1,14 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<div class="p-5">
+  <div>
+    <span>
+      <i class="fa-solid fa-chevron-left"></i>
+      <%= link_to "Back to home", root_path %>
+    </span>
+    <div class="flex items-center justify-between">
 
-<h1>Rota</h1>
+      <h1 class="text-zinc-800 font-bold text-2xl">Rotas</h1>
+      <%= link_to "New rotum", new_rotum_path,class:"text-sm bg-blue-500 text-white rounded py-1 px-2 cursor-pointer transition duration-300 hover:bg-blue-600"  %>
+    </div>
+  </div>
 
-<div id="rota">
-  <% @rota.each do |rotum| %>
-    <%= render rotum %>
-    <p>
-      <%= link_to "Show this rotum", rotum %>
-    </p>
-  <% end %>
+  <div id="rota" class="mt-3 flex flex-col gap-5">
+    <% @rota.each do |rotum| %>
+      <div class="p-5 bg-white rounded-lg shadow-lg flex justify-between">
+          <%= render rotum %>
+          <p>
+            <%= link_to "Show this rotum", rotum, class:"py-2 px-3 rounded-lg cursor-pointer transition duration-300 hover:bg-slate-800 hover:text-white" %>
+          </p>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to "New rotum", new_rotum_path %>
