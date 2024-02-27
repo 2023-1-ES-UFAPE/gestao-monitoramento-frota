@@ -1,10 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<div class="p-5">
+  <div class="mb-3">
+    <span>
+      <i class="fa-solid fa-chevron-left"></i>
+      <%= link_to "Back to cargas", cargas_path %>
+    </span>
+    <h1 class="text-zinc-800 font-bold text-2xl">Visualizar Carga</h1>
+  </div>
 
-<%= render @carga_atual %>
+  <div class="p-5 bg-white rounded-lg shadow-lg flex justify-between">
+    <%= render @carga_atual %>
 
-<div>
-  <%= link_to "Edit this carga", edit_carga_path(@carga_atual) %> |
-  <%= link_to "Back to cargas", cargas_path %>
-
-  <%= button_to "Destroy this carga", @carga_atual, method: :delete %>
+    <div class="flex flex-col gap-3">
+      <%= link_to "Edit this carga", edit_carga_path(@carga_atual),  class:"bg-slate-500 text-white rounded py-2 px-3 cursor-pointer transition duration-300 hover:bg-slate-600" %>
+      <%= button_to "Destroy this carga", @carga_atual, method: :delete, class:"bg-red-500 text-white rounded py-2 px-3 cursor-pointer transition duration-300 hover:bg-red-600" %>
+    </div>
+  </div>
 </div>
