@@ -1,6 +1,6 @@
 <%= form_with(model: caminhao) do |form| %>
   <% if caminhao.errors.any? %>
-    <div style="color: red">
+    <div style="color: red" class="mb-3">
       <h2><%= pluralize(caminhao.errors.count, "error") %> prohibited this caminhao from being saved:</h2>
 
       <ul>
@@ -11,42 +11,44 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :modelo, style: "display: block" %>
-    <%= form.text_field :modelo %>
+  <div class="p-5 bg-white rounded-lg shadow-lg grid grid-cols-2 gap-y-4 justify-center">
+    <div>
+      <%= form.label :modelo, style: "display: block" %>
+      <%= form.text_field :modelo %>
+    </div>
+
+    <div>
+      <%= form.label :placa, style: "display: block" %>
+      <%= form.text_field :placa %>
+    </div>
+
+    <div>
+      <%= form.label :ano, style: "display: block" %>
+      <%= form.number_field :ano %>
+    </div>
+
+    <div>
+      <%= form.label :capacidade, style: "display: block" %>
+      <%= form.text_field :capacidade %>
+    </div>
+
+    <div>
+      <%= form.label :status, style: "display: block" %>
+      <%= form.text_field :status %>
+    </div>
+
+    <div>
+      <%= form.label :chassi, style: "display: block" %>
+      <%= form.text_field :chassi %>
+    </div>
+
+    <div>
+      <%= form.label :data_ultima_inspecao, style: "display: block" %>
+      <%= form.datetime_field :data_ultima_inspecao %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :placa, style: "display: block" %>
-    <%= form.text_field :placa %>
-  </div>
-
-  <div>
-    <%= form.label :ano, style: "display: block" %>
-    <%= form.number_field :ano %>
-  </div>
-
-  <div>
-    <%= form.label :capacidade, style: "display: block" %>
-    <%= form.text_field :capacidade %>
-  </div>
-
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
-  </div>
-
-  <div>
-    <%= form.label :chassi, style: "display: block" %>
-    <%= form.text_field :chassi %>
-  </div>
-
-  <div>
-    <%= form.label :data_ultima_inspecao, style: "display: block" %>
-    <%= form.datetime_field :data_ultima_inspecao %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+    <div class="mt-3 h-full flex justify-end">
+      <%= form.submit :class=>"bg-blue-500 text-white rounded py-2 px-3 cursor-pointer transition duration-300 hover:bg-blue-600" %>
+    </div>
 <% end %>

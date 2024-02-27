@@ -10,12 +10,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body class="flex bg-slate-300 w-screen h-screen flex flex-col">
+  <body class="flex bg-slate-300 w-screen h-screen flex flex-col box-border">
     <% if user_signed_in? %>
       <%= render "layouts/navbar" %>
     <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert w-screen bg-blue-500 text-white"><%= alert %></p>
+    <p class="notice w-screen bg-blue-500 text-white px-3"><%= notice %></p>
+    <p class="alert w-screen bg-blue-500 text-white px-3"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
