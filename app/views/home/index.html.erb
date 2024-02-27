@@ -1,3 +1,35 @@
-<% if user_signed_in? %>
-  <%= button_to "Logout", destroy_user_session_path, method: :delete  %>
-<% end %>
+<div class="mx-auto w-1/2 p-5 flex flex-col items-center">
+  <p class="text-zinc-800 font-bold text-2xl">Escolha uma opção para prosseguir:</p>
+  <div class="w-full grid grid-cols-3 gap-7 mt-10">
+    <div class="p-5 bg-white rounded shadow-lg flex flex-col items-center gap-2">
+      <i class="fa-solid fa-truck-front text-blue-500"></i>
+      <p>Caminhões</p>
+      <%= link_to "Caminhões", caminhaos_path, class:"text-sm bg-blue-500 text-white rounded py-1 px-2 cursor-pointer transition duration-300 hover:bg-blue-600" %>
+    </div>
+    <div class="p-5 bg-white rounded shadow-lg flex flex-col items-center gap-2">
+      <i class="fa-solid fa-id-card text-blue-500"></i>
+      <p>Motoristas</p>
+      <%= link_to "Motoristas", motoristas_path, class:"text-sm bg-blue-500 text-white rounded py-1 px-2 cursor-pointer transition duration-300 hover:bg-blue-600" %><br />
+    </div>
+    <div class="p-5 bg-white rounded shadow-lg flex flex-col items-center gap-2">
+      <i class="fa-solid fa-boxes-stacked text-blue-500"></i>
+      <p>Cargas</p>
+      <%= link_to "Cargas", cargas_path, class:"text-sm bg-blue-500 text-white rounded py-1 px-2 cursor-pointer transition duration-300 hover:bg-blue-600" %><br />
+    </div>
+    <div class="p-5 bg-white rounded shadow-lg flex flex-col items-center gap-2">
+      <i class="fa-solid fa-store text-blue-500"></i>
+      <p>Endereços</p>
+      <%= link_to "Endereços", enderecos_path, class:"text-sm bg-blue-500 text-white rounded py-1 px-2 cursor-pointer transition duration-300 hover:bg-blue-600" %><br />
+    </div>
+    <div class="p-5 bg-white rounded shadow-lg flex flex-col items-center gap-2">
+      <i class="fa-solid fa-map-location text-blue-500"></i>
+      <p>Paradas</p>
+      <%= link_to "Paradas", paradas_path, class:"text-sm bg-blue-500 text-white rounded py-1 px-2 cursor-pointer transition duration-300 hover:bg-blue-600" %><br />
+    </div>
+    <div class="p-5 bg-white rounded shadow-lg flex flex-col items-center gap-2">
+      <i class="fa-solid fa-road text-blue-500"></i>
+      <p>Rotas</p>
+      <%= link_to "Rotas", rota_path, class:"text-sm bg-blue-500 text-white rounded py-1 px-2 cursor-pointer transition duration-300 hover:bg-blue-600" %><br />
+    </div>
+  </div>
+</div>
