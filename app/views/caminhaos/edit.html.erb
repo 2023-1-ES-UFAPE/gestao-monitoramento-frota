@@ -1,10 +1,13 @@
-<h1>Editing caminhao</h1>
+<div class="p-5">
+  <div class="mb-3">
+    <span>
+      <i class="fa-solid fa-chevron-left"></i>
+      <%= link_to "Back to caminhao", @caminhao_atual %>
+    </span>
+    <h1 class="text-zinc-800 font-bold text-2xl">Editing caminhao</h1>
+  </div>
 
-<%= render "form", caminhao: @caminhao_atual %>
+  <%= render "form", caminhao: @caminhao_atual %>
 
-<br>
-
-<div>
-  <%= link_to "Show this caminhao", @caminhao_atual %> |
-  <%= link_to "Back to caminhaos", caminhaos_path %>
+  <br>
 </div>

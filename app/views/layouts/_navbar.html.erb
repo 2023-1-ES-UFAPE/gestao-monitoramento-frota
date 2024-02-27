@@ -1,0 +1,15 @@
+<div class="w-screen bg-slate-900 text-white shadow-lg flex items-center justify-between p-3">
+  <p class="font-bold">
+    <i class="fa-solid fa-truck-fast text-blue-500"></i>
+    Monitoramento
+  </p>
+  <div class="flex items-center gap-2">
+    <%= link_to "Caminhões", caminhaos_path, class:"py-2 px-3 rounded-lg cursor-pointer hover:bg-slate-800" %><br />
+    <%= link_to "Cargas", cargas_path, class:"py-2 px-3 rounded-lg cursor-pointer hover:bg-slate-800" %><br />
+    <%= link_to "Endereços", enderecos_path, class:"py-2 px-3 rounded-lg cursor-pointer hover:bg-slate-800" %><br />
+    <%= link_to "Motoristas", motoristas_path, class:"py-2 px-3 rounded-lg cursor-pointer hover:bg-slate-800" %><br />
+    <%= link_to "Paradas", paradas_path, class:"py-2 px-3 rounded-lg cursor-pointer hover:bg-slate-800" %><br />
+    <%= link_to "Rotas", rota_path, class:"py-2 px-3 rounded-lg cursor-pointer hover:bg-slate-800" %><br />
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"bg-blue-500 text-white rounded py-2 px-3 cursor-pointer transition duration-300 hover:bg-blue-600"%>
+  </div>
+</div>
