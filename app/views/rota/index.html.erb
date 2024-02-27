@@ -5,9 +5,11 @@
       <%= link_to "Back to home", root_path %>
     </span>
     <div class="flex items-center justify-between">
-
       <h1 class="text-zinc-800 font-bold text-2xl">Rotas</h1>
-      <%= link_to "New rotum", new_rotum_path,class:"text-sm bg-blue-500 text-white rounded py-1 px-2 cursor-pointer transition duration-300 hover:bg-blue-600"  %>
+      <div class="flex gap-3">
+        <%= link_to "New rotum", new_rotum_path,class:"text-sm bg-blue-500 text-white rounded py-1 px-2 cursor-pointer transition duration-300 hover:bg-blue-600"  %>
+        <%= link_to "Find rota", search_rota_path ,class:"text-sm bg-blue-500 text-white rounded py-1 px-2 cursor-pointer transition duration-300 hover:bg-blue-600"  %>
+      </div>
     </div>
   </div>
 

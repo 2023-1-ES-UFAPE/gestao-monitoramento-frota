@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :enderecos
     resources :rota
 
-    get '/search/rota', to: "rota#search"
+    get '/search/rota', to: "rota#search", as: :rota_search
     post '/search/rota', to: "rota#search_rota"
 
     get '/search/motorista', to: "motoristas#search"

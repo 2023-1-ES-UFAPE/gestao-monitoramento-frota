@@ -1,9 +1,19 @@
-<h1>Find Rotas</h1>
-<% if !@error.to_s.empty? %>
-  <p style="color: red"><%= @error %></p>
-<% end %>
-<%= form_tag("/search/rota", method: "post") do %>
-  <%= label_tag(:placa, "Placa:","style"=>"display:block;") %>
-  <%= text_field_tag(:placa) %>
-  <%= submit_tag("Search") %>
-<% end %>
+<div class="p-5">
+  <div class="mb-3">
+    <span>
+      <i class="fa-solid fa-chevron-left"></i>
+      <%= link_to "Back to rotas", rota_path %>
+
+    </span>
+    <h1 class="text-zinc-800 font-bold text-2xl">Find Rotas</h1>
+  </div>
+
+  <% if !@error.to_s.empty? %>
+    <p style="color: red" class="mb-3"><%= @error %></p>
+  <% end %>
+  <%= form_tag("/search/rota", method: "post") do %>
+    <%= label_tag(:placa, "Placa:","style"=>"display:block;") %>
+    <%= text_field_tag(:placa) %>
+    <%= submit_tag("Search", "class"=>"bg-blue-500 text-white rounded py-2 px-3 cursor-pointer transition duration-300 hover:bg-blue-600")%>
+  <% end %>
+</div>
