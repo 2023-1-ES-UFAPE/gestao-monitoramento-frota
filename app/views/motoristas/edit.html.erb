@@ -1,10 +1,13 @@
-<h1>Editing motorista</h1>
+<div class="p-5">
+  <div class="mb-3">
+    <span>
+      <i class="fa-solid fa-chevron-left"></i>
+      <%= link_to "Back to motorista", @motorista %>
+    </span>
+    <h1 class="text-zinc-800 font-bold text-2xl">Editing motorista</h1>
+  </div>
 
-<%= render "form", motorista: @motorista %>
+  <%= render "form", motorista: @motorista %>
 
-<br>
-
-<div>
-  <%= link_to "Show this motorista", @motorista %> |
-  <%= link_to "Back to motoristas", motoristas_path %>
+  <br>
 </div>
