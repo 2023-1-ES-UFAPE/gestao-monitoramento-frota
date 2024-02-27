@@ -1,9 +1,13 @@
-<h1>New endereco</h1>
+<div class="p-5">
+  <div class="mb-3">
+    <span>
+      <i class="fa-solid fa-chevron-left"></i>
+      <%= link_to "Back to enderecos", enderecos_path %>
+    </span>
+    <h1 class="text-zinc-800 font-bold text-2xl">New endereco</h1>
+  </div>
 
-<%= render "form", endereco: @endereco_atual %>
+  <%= render "form", endereco: @endereco_atual %>
 
-<br>
-
-<div>
-  <%= link_to "Back to enderecos", enderecos_path %>
+  <br>
 </div>
