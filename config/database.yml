@@ -31,5 +31,11 @@ actions:
   port:     <%= ENV.fetch('PG_PORT', 5432) %>
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  database: <%= ENV.fetch('PG_DATABASE', 'frotacaminhaodb') %>
+  host:     <%= ENV.fetch('PG_HOST',  'localhost') %>
+  username: <%= ENV.fetch('PG_USER', 'root') %>
+  password: <%= ENV.fetch('PG_PASSWORD', 'admin') %>
+  port:     <%= ENV.fetch('PG_PORT', 5432) %>
